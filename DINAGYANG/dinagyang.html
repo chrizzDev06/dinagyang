@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dinagyang Festival Details</title>
+    <link rel="stylesheet" href="next.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="ILOILO.png" alt="Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#" class="btn">Sign In / Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>About Dinagyang Festival</h1>
+            <p>
+                Dinagyang Festival is celebrated every January in Iloilo City,
+                Philippines. It honors the Santo Niño and showcases
+                street dancing, colorful costumes, drum performances,
+                and the vibrant culture of the Ilonggo people.
+            </p>
+        </section>
+
+        <!-- Gallery Section with Lightbox -->
+        <section class="gallery">
+            <h2>Festival Highlights</h2>
+            <div class="images">
+                <img src="iloilo1.jpg" alt="Street Dancing" class="zoomable">
+                <img src="iloilo2.png" alt="Tribal Costumes" class="zoomable">
+                <img src="iloilo3.jpg" alt="Drum Performance" class="zoomable">
+            </div>
+        </section>
+
+        <!-- Lightbox Container -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MyWebsite | All Rights Reserved</p>
+    </footer>
+
+    <!-- Lightbox Script -->
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".zoomable").forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

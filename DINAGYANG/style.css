@@ -1,0 +1,203 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with animated gradient background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #95cc4d, #ce8a3d, #3b84d8);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Login Button */
+.btn {
+    background: #ff6a00;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #ff8c42;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: slideDown 1.5s ease;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Button */
+.hero button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #e22525, #56e42b, #4facfe);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+/* Push footer to bottom */
+main {
+    flex: 1;
+}
+/* Hero Section with Background Image */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Full-page Background */
+body::before {
+    content: "";
+    position: fixed;      /* Stay fixed even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dinagyang.avif') no-repeat center center/cover;
+    opacity: 0.3;          /* Low opacity */
+    z-index: -1;            /* Behind everything */
+}
+
+/* Make sure content is above the background */
+body {
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+}
+
+
+/* Hero Text stays on top */
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.hero button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #c9df0a, #ce8a3d, #4facfe);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+}
